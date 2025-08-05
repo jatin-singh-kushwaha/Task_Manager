@@ -12,7 +12,7 @@ const app = express();
 
 // Middlewares
 app.use(cors({
-  origin: 'https://task-manager-1-tqiy.onrender.com/', 
+  origin: 'https://task-manager-1-tqiy.onrender.com', 
   credentials: true 
 }));
 
