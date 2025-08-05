@@ -12,7 +12,7 @@ export default function EditUser() {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await API.get(`/users/${id}`);
+        const res = await API.get(`/api/users/${id}`);
         setUser(res.data);
       } catch (err) {
         setError('Failed to load user');
@@ -24,7 +24,7 @@ export default function EditUser() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await API.put(`/users/${id}`, user);
+      await API.put(`/api/users/${id}`, user);
       navigate('/admin/users');
     } catch (err) {
       setError('Failed to update user');
