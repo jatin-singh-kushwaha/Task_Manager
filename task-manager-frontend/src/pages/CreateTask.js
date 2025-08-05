@@ -23,7 +23,7 @@ export default function CreateTask() {
     const fetchUsers = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await API.get('/users', {
+        const res = await API.get('/api/users', {
           headers: { Authorization: `Bearer ${token}` },
         });
         setUsers(res.data);
@@ -69,7 +69,7 @@ export default function CreateTask() {
 
     try {
       const token = localStorage.getItem('token');
-      await API.post('/tasks', formData, {
+      await API.post('/api/tasks', formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'multipart/form-data'
