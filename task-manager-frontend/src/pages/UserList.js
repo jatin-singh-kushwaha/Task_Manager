@@ -16,7 +16,7 @@ export default function UserList() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const res = await API.get('/users');
+        const res = await API.get('/api/users');
         setUsers(res.data);
       } catch (err) {
         setError('Failed to load users');
@@ -28,7 +28,7 @@ export default function UserList() {
   const handleDelete = async (id) => {
     if (!window.confirm('Are you sure you want to delete this user?')) return;
     try {
-      await API.delete(`/users/${id}`);
+      await API.delete(`/api/users/${id}`);
       const updated = users.filter(u => u._id !== id);
       setUsers(updated);
     } catch (err) {
