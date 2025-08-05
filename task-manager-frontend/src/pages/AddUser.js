@@ -20,7 +20,7 @@ export default function AddUser() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await API.post('/users', form);
+      await API.post('/api/users', form);
       navigate('/admin/users');
     } catch (err) {
       setError('Failed to create user');
