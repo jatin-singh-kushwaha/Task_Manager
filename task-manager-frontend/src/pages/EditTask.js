@@ -23,7 +23,7 @@ export default function EditTask() {
   const fetchUsers = async () => {
     try {
       const token = localStorage.getItem('token');
-      const res = await API.get('/users', {
+      const res = await API.get('/api/users', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setUsers(res.data);
@@ -35,7 +35,7 @@ export default function EditTask() {
   const fetchTask = async () => {
     try {
       const token = localStorage.getItem('token');
-      const res = await API.get(`/tasks/${id}`, {
+      const res = await API.get(`/api/tasks/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const { title, description, dueDate, priority, status, assignedTo } = res.data;
@@ -70,7 +70,7 @@ export default function EditTask() {
 
     try {
       const token = localStorage.getItem('token');
-      await API.put(`/tasks/${id}`, formData, {
+      await API.put(`/api/tasks/${id}`, formData, {
         headers: { Authorization: `Bearer ${token}` },
       });
       navigate('/');
