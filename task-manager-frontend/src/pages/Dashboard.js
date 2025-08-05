@@ -21,7 +21,7 @@ export default function Dashboard() {
   const fetchTasks = async () => {
     try {
       const token = localStorage.getItem('token');
-      const res = await API.get(`/tasks?page=${page}&limit=5`, {
+      const res = await API.get(`/api/tasks?page=${page}&limit=5`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const fetchedTasks = res.data.tasks || [];
@@ -37,7 +37,7 @@ export default function Dashboard() {
   const fetchUsers = async () => {
     try {
       const token = localStorage.getItem('token');
-      const res = await API.get('/users', {
+      const res = await API.get('/api/users', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setUsers(res.data);
@@ -55,7 +55,7 @@ export default function Dashboard() {
   if (!window.confirm('Are you sure you want to delete this task?')) return;
   try {
     const token = localStorage.getItem('token');
-    await API.delete(`/tasks/${id}`, {
+    await API.delete(`/api/tasks/${id}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     fetchTasks(); // Refresh task list
@@ -69,7 +69,7 @@ export default function Dashboard() {
     try {
       const token = localStorage.getItem('token');
       const res = await API.put(
-        `/tasks/${selectedTaskId}/assign`,
+        `/api/tasks/${selectedTaskId}/assign`,
         { userId: assignModal.userId },
         {
           headers: {
