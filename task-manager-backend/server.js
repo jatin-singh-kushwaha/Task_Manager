@@ -11,7 +11,11 @@ dotenv.config();
 const app = express();
 
 // Middlewares
-app.use(cors());
+app.use(cors({
+  origin: 'https://task-manager-1-tqiy.onrender.com/', 
+  credentials: true 
+}));
+
 app.use(express.json());
 app.use('/uploads', express.static('uploads'));
 app.use('/api/auth', authRoutes);
