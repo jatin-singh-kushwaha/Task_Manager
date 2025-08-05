@@ -12,7 +12,7 @@ export default function TaskDetail() {
     const fetchTask = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await API.get(`/tasks/${id}`, {
+        const res = await API.get(`/api/tasks/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         setTask(res.data);
