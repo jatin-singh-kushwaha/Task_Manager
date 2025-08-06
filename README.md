@@ -6,7 +6,7 @@ A simple, user-friendly task tracking application built with the MERN stack! It 
 
 ## 🔗 Links
 
-- 🔴 **Live App**: [https://task-manager-1-tqiy.onrender.com/login](https://task-manager-1-tqiy.onrender.com/login)  
+- 🔴 **Live App**: [https://task-manager-1-tqiy.onrender.com/](https://task-manager-1-tqiy.onrender.com/)  
 - 🐙 **GitHub Repo**: [https://github.com/jatin-singh-kushwaha/Task_Manager](https://github.com/jatin-singh-kushwaha/Task_Manager)
 
 ---
